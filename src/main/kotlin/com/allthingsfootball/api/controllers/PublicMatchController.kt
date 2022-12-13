@@ -10,6 +10,7 @@ class PublicMatchController(private val service: MatchService) {
 
     @RequestMapping("matches")
     fun getAllMatches(): String {
+        service.getLiveMatches()
         return "Returns all matches"
     }
 }
