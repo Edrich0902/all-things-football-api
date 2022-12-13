@@ -1,14 +1,15 @@
 package com.allthingsfootball.api.controllers
 
+import com.allthingsfootball.api.services.MatchService
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("public/")
-class Test {
+class PublicMatchController(private val service: MatchService) {
 
-    @RequestMapping("test")
-    fun test(): String {
-        return "Testing auth"
+    @RequestMapping("matches")
+    fun getAllMatches(): String {
+        return "Returns all matches"
     }
 }
